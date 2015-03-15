@@ -1,0 +1,55 @@
+//TODO: Please write code in this file.
+//player
+function player(life,attack)
+{
+	this.life=life;
+	this.attack=attack;
+	this.alive=true;
+
+	this.fight=function(object)
+	{
+		object.life-=this.attack;
+	}
+
+	this.is_alive=function()
+	{
+		if(this.life>0)
+			return true;
+		else
+		{
+			this.alive=false;
+			return false;
+		}
+	}
+}
+
+//who is winner
+function player_win(player_a, player_b)
+{
+	if(!player_a.is_alive())
+		return 'B win';
+	else
+		return 'A win';
+}
+
+//fight progress
+function fight_player(player_a, player_b)
+{
+	while(1)
+	{
+		if(player_a.is_alive())
+			break;
+		else
+			player_a.fight(player_b);
+
+		if(player_b.is_alive())
+			break;
+		else
+			player_b.fight(player_a);
+	}
+	
+	return player_win(player_a, player_b);
+
+	//return 'A win';
+}
+	
