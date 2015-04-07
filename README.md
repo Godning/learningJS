@@ -1,6 +1,6 @@
 # learningJS
 #question1：
-  *use OOP to create two players
+		*use OOP to create two players
   *create function fight to simulate two players fight process
   *accept the test
 #question2:
